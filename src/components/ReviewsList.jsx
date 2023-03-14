@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../utils/api";
 
+import ReviewCard from "./ReviewCard";
+
 const ReviewsList = () => {
   const [reviewsList, setReviewsList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +19,15 @@ const ReviewsList = () => {
   return (
     <main>
       <h2>Reviews List</h2>
-      {isLoading ? <p>Loading...</p> : <ul> map reviews here </ul>}
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="reviews-cards">
+          {reviewsList.map((review) => {
+            return <ReviewCard key={review.review_id} {...review} />;
+          })}
+        </div>
+      )}
     </main>
   );
 };

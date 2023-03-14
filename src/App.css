@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -34,5 +38,40 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+main {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.review-card {
+  text-align: left;
+  padding: 1em;
+  margin-top: 2em;
+  border: 2px solid black;
+  border-radius: 1em;
+}
+
+.review-card:first-child {
+  margin-top: 0;
+}
+
+.review-card .review-title {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.review-card .review-image {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .review-card .review-image {
+    max-width: 35%;
+    float: left;
+    margin-right: 1em;
   }
 }
