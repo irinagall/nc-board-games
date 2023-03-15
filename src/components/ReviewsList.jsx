@@ -15,8 +15,6 @@ const ReviewsList = () => {
     });
   }, []);
 
-  console.log(reviewsList, "reviewList");
-
   return (
     <main>
       <h2>Reviews List</h2>

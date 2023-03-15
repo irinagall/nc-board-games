@@ -45,6 +45,14 @@ main {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+@media screen and (min-width: 800px) {
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .review-card {
@@ -74,4 +82,20 @@ main {
     float: left;
     margin-right: 1em;
   }
+}
+
+.review-content .review-body {
+  font-size: 20px;
+}
+
+.comment-listing {
+  text-align: left;
+  padding-bottom: 1em;
+}
+
+.comment-listing .comment-author {
+  font-weight: bold;
+}
+.comment-listing .comment-body {
+  margin-top: 0.5em;
 }
