@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../utils/api";
+import { Link } from "react-router-dom";
 
 import ReviewCard from "./ReviewCard";
 
@@ -22,11 +23,14 @@ const ReviewsList = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div className="reviews-cards">
-          {reviewsList.map((review) => {
-            return <ReviewCard key={review.review_id} {...review} />;
-          })}
-        </div>
+        <>
+          <Link to="/reviews/">View All Reviews</Link>
+          <div className="reviews-cards">
+            {reviewsList.map((review) => {
+              return <ReviewCard key={review.review_id} {...review} />;
+            })}
+          </div>
+        </>
       )}
     </main>
   );
