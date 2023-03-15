@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-const ReviewCard = ({
-  review_id,
+const IndividualReviewContent = ({
   owner,
   title,
   category,
@@ -8,10 +6,8 @@ const ReviewCard = ({
   review_body,
 }) => {
   return (
-    <article className="review-card">
-      <Link to={"/reviews/" + review_id} className="review-title">
-        {title}
-      </Link>
+    <article className="review-content">
+      <h2 className="review-title">{title}</h2>
       <img
         className="review-image"
         src={review_img_url}
@@ -24,4 +20,4 @@ const ReviewCard = ({
   );
 };
 
-export default ReviewCard;
+export default IndividualReviewContent;
