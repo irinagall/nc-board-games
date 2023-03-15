@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 const ReviewCard = ({
+  review_id,
   owner,
   title,
   category,
@@ -7,7 +9,9 @@ const ReviewCard = ({
 }) => {
   return (
     <article className="review-card">
-      <div className="review-title">{title}</div>
+      <Link to={"/reviews/" + review_id} className="review-title">
+        {title}
+      </Link>
       <img
         className="review-image"
         src={review_img_url}

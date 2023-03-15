@@ -14,13 +14,13 @@ const IndividualReviewPage = () => {
   }, [review_id]);
 
   return (
-    <div>
+    <main>
       {review ? (
         <IndividualReviewContent key={review.review_id} {...review} />
       ) : (
         "Loading.."
       )}
-    </div>
+    </main>
   );
 };
 

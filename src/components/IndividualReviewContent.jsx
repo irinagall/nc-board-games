@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 const IndividualReviewContent = ({
   owner,
   title,
@@ -9,7 +7,7 @@ const IndividualReviewContent = ({
 }) => {
   return (
     <article className="review-content">
-      <div className="review-title">{title}</div>
+      <h2 className="review-title">{title}</h2>
       <img
         className="review-image"
         src={review_img_url}
