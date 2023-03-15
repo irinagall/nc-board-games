@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <header>
-      <h1>NC Games</h1>
+      <Link to="/home/">
+        <h1>NC Games</h1>
+      </Link>
     </header>
   );
 }
