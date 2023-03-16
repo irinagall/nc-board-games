@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getComments } from "../utils/api";
 import CommentListing from "./CommentListing";
 
-const CommentsList = () => {
+const CommentsSection = () => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { review_id } = useParams([]);
@@ -22,7 +22,7 @@ const CommentsList = () => {
         <>
           <div className="comments-cards">
             {comments.map((comment) => {
-              return <CommentListing {...comment} />;
+              return <CommentListing key={comment.comment_id} {...comment} />;
             })}
           </div>
         </>
@@ -31,4 +31,4 @@ const CommentsList = () => {
   );
 };
 
-export default CommentsList;
+export default CommentsSection;
