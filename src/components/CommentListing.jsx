@@ -1,7 +1,7 @@
 const CommentListing = (comment) => {
   return (
     <article className="comment-listing">
-      <div className="comment-author">{comment.author}</div>
+      <h4 className="comment-author">{comment.author}</h4>
       <p className="comment-body">{comment.body}</p>
     </article>
   );
