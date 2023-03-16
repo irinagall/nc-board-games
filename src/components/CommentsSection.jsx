@@ -2,8 +2,9 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getComments } from "../utils/api";
 import CommentListing from "./CommentListing";
+import NewCommentForm from "./NewCommentForm";
 
-const CommentsList = () => {
+const CommentsSection = () => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { review_id } = useParams([]);
@@ -27,8 +28,9 @@ const CommentsList = () => {
           </div>
         </>
       )}
+      <NewCommentForm />
     </>
   );
 };
 
-export default CommentsList;
+export default CommentsSection;

@@ -23,3 +23,12 @@ export const getComments = (reviewId) => {
       return data.comments;
     });
 };
+
+export const postNewComment = (review_id, newComment) => {
+  return boardGamesRequestMaker
+    .post(`/reviews/${review_id}/comments`, newComment)
+    .then((response) => {
+      console.log(response);
+      return response.data;
+    });
+};

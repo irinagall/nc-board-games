@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+button {
+  padding: 4px;
+}
+
 .App {
   text-align: center;
 }
@@ -104,4 +108,14 @@ main {
   .comment-listing .comment-body {
     text-align: center;
   }
+}
+
+.new-comment-form {
+  padding: 6px;
+}
+.new-comment-form textarea {
+  display: block;
+  width: 100%;
+  padding: 4px;
+  margin-bottom: 3px;
 }

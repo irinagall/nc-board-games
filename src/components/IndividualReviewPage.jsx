@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { getReview } from "../utils/api";
-import CommentsList from "./CommentsList";
+import CommentsSection from "./CommentsSection";
 
 const IndividualReviewPage = () => {
   const [review, setReview] = useState(null);
@@ -21,7 +21,7 @@ const IndividualReviewPage = () => {
       ) : (
         "Loading.."
       )}
-      <CommentsList />
+      <CommentsSection />
     </main>
   );
 };
