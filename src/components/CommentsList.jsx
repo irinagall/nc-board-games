@@ -5,22 +5,28 @@ import CommentListing from "./CommentListing";
 
 const CommentsList = () => {
   const [comments, setComments] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { review_id } = useParams([]);
   useEffect(() => {
     getComments(review_id).then((comments) => {
       setComments(comments);
+      setIsLoading(false);
     });
   }, [review_id]);
   return (
     <>
       <h2>Comments</h2>
-      <>
-        <div className="comments-cards">
-          {comments.map((comment) => {
-            return <CommentListing {...comment} />;
-          })}
-        </div>
-      </>
+      {isLoading ? (
+        <p>Loading comments...</p>
+      ) : (
+        <>
+          <div className="comments-cards">
+            {comments.map((comment) => {
+              return <CommentListing {...comment} />;
+            })}
+          </div>
+        </>
+      )}
     </>
   );
 };

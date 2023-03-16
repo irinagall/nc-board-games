@@ -99,3 +99,9 @@ main {
 .comment-listing .comment-body {
   margin-top: 0.5em;
 }
+
+@media (max-width: 767px) {
+  .comment-listing .comment-body {
+    text-align: center;
+  }
+}
