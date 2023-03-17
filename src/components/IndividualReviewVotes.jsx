@@ -29,7 +29,7 @@ const IndividualReviewVotes = () => {
     setVotes(votes + voteChange);
     if (isDownvote) {
       const newReviewsVotedOn = reviewsVotedOn.filter((item) => {
-        return item != review_id;
+        return item !== review_id;
       });
       cookies.set(reviewsVotedOnCookieKey, newReviewsVotedOn);
     } else {
