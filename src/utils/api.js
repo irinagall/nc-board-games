@@ -23,3 +23,19 @@ export const getComments = (reviewId) => {
       return data.comments;
     });
 };
+
+export const getVotes = (review_id) => {
+  return boardGamesRequestMaker
+    .get(`/reviews/${review_id}`)
+    .then(({ data }) => {
+      return data.review.votes;
+    });
+};
+
+export const voteForReview = (review_id, changeVal) => {
+  return boardGamesRequestMaker
+    .patch(`/reviews/${review_id}`, { inc_votes: changeVal })
+    .then(({ data }) => {
+      return data.review.votes;
+    });
+};
