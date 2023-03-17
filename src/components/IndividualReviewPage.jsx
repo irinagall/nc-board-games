@@ -1,6 +1,7 @@
 import IndividualReviewContent from "./IndividualReviewContent";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import IndividualReviewVotes from "./IndividualReviewVotes";
 
 import { getReview } from "../utils/api";
 import CommentsSection from "./CommentsSection";
@@ -21,6 +22,7 @@ const IndividualReviewPage = () => {
       ) : (
         "Loading.."
       )}
+      <IndividualReviewVotes />
       <CommentsSection />
     </main>
   );

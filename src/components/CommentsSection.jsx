@@ -23,7 +23,7 @@ const CommentsSection = () => {
         <>
           <div className="comments-cards">
             {comments.map((comment) => {
-              return <CommentListing {...comment} />;
+              return <CommentListing key={comment.comment_id} {...comment} />;
             })}
           </div>
         </>

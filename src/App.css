@@ -6,6 +6,17 @@ button {
   padding: 4px;
 }
 
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Futura";
+}
+
 .App {
   text-align: center;
 }
@@ -118,4 +129,21 @@ main {
   width: 100%;
   padding: 4px;
   margin-bottom: 3px;
+}
+
+.reviews__votes-and-comments {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.individual-review--votes {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.individual-review-votes__vote-button {
+  padding: 4px;
+  display: inline-block;
+  font-size: larger;
+  border-radius: 20%;
 }

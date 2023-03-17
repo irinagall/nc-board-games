@@ -6,21 +6,30 @@ const ReviewCard = ({
   category,
   review_img_url,
   review_body,
+  comment_count,
+  votes,
 }) => {
   return (
-    <article className="review-card">
-      <Link to={"/reviews/" + review_id} className="review-title">
-        {title}
-      </Link>
-      <img
-        className="review-image"
-        src={review_img_url}
-        alt={"picture of " + title}
-      />
-      <div className="review-owner">{owner}</div>
-      <div className="review-category">{category}</div>
-      <p className="review-body">{review_body}</p>
-    </article>
+    <div>
+      <article className="review-card">
+        <Link to={"/reviews/" + review_id} className="review-title">
+          {title}
+        </Link>
+        <img
+          className="review-image"
+          src={review_img_url}
+          alt={"picture of " + title}
+        />
+        <div className="review-owner">{owner}</div>
+        <div className="review-category">{category}</div>
+        <p className="review-body">{review_body}</p>
+      </article>
+
+      <section className="reviews__votes-and-comments">
+        <p className="reviews-votes">Votes:{votes}</p>
+        <p className="reviews-comments">Comments:{comment_count}</p>
+      </section>
+    </div>
   );
 };
 

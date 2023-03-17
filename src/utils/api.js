@@ -24,6 +24,21 @@ export const getComments = (reviewId) => {
     });
 };
 
+export const getVotes = (review_id) => {
+  return boardGamesRequestMaker
+    .get(`/reviews/${review_id}`)
+    .then(({ data }) => {
+      return data.review.votes;
+    });
+};
+
+export const voteForReview = (review_id, changeVal) => {
+  return boardGamesRequestMaker
+    .patch(`/reviews/${review_id}`, { inc_votes: changeVal })
+    .then(({ data }) => {
+      return data.review.votes;
+    });
+};
 export const postNewComment = (review_id, newComment) => {
   return boardGamesRequestMaker
     .post(`/reviews/${review_id}/comments`, newComment)
