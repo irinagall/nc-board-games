@@ -14,14 +14,18 @@ const NewCommentForm = () => {
   }, [newCommentText]);
 
   const onClickCommentSubmit = () => {
+    isPostingInProgress(true);
     setIsPostingError(false);
     postNewComment(review_id, {
       username: "anonymous",
       body: newCommentText,
     })
-      .then((newComment) => {})
+      .then((newComment) => {
+        setIsPostingInProgress(false);
+      })
       .catch(() => {
         setIsPostingError(true);
+        setIsPostingInProgress(false);
       });
   };
 
@@ -44,6 +48,7 @@ const NewCommentForm = () => {
           event.preventDefault();
           onClickCommentSubmit();
         }}
+        disabled={isPostingInProgress}
       >
         Comment
       </button>
