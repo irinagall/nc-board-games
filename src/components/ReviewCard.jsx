@@ -21,13 +21,17 @@ const ReviewCard = ({
           alt={"picture of " + title}
         />
         <div className="review-owner">{owner}</div>
-        <div className="review-category">{category}</div>
+        <Link to={"/category/" + category} className="review-category">
+          {category}
+        </Link>
         <p className="review-body">{review_body}</p>
       </article>
 
       <section className="reviews__votes-and-comments">
         <p className="reviews-votes">Votes:{votes}</p>
-        <p className="reviews-comments">Comments:{comment_count}</p>
+        {comment_count !== undefined && (
+          <p className="reviews-comments">Comments: {comment_count}</p>
+        )}
       </section>
     </div>
   );

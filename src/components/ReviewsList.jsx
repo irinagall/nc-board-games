@@ -9,8 +9,8 @@ const ReviewsList = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getReviews().then((reviewsData) => {
-      setReviewsList(reviewsData);
+    getReviews().then((reviews) => {
+      setReviewsList(reviews);
       setIsLoading(false);
     });
   }, []);
