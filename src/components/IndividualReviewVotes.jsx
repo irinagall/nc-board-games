@@ -8,8 +8,10 @@ const IndividualReviewVotes = () => {
   const [votes, setVotes] = useState(null);
   const [isVotingInProgress, setIsVotingInProgress] = useState(false);
   const [isVotingError, setIsVotingError] = useState(false);
-  let votesPriorToVoting = -1;
+
   const { review_id } = useParams([]);
+  
+  let votesPriorToVoting = -1;
   const cookies = new Cookies();
   const reviewsVotedOnCookieKey = "reviewsVotedOn";
   const reviewsVotedOn = cookies.get(reviewsVotedOnCookieKey) || [];

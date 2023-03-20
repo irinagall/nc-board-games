@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getComments } from "../utils/api";
 import CommentListing from "./CommentListing";
+import NewCommentForm from "./NewCommentForm";
 
 const CommentsSection = () => {
   const [comments, setComments] = useState([]);
@@ -27,6 +28,7 @@ const CommentsSection = () => {
           </div>
         </>
       )}
+      <NewCommentForm />
     </>
   );
 };
