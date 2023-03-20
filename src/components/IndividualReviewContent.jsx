@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const IndividualReviewContent = ({
   owner,
   title,
@@ -14,7 +16,9 @@ const IndividualReviewContent = ({
         alt={"picture of " + title}
       />
       <div className="review-owner">{owner}</div>
-      <div className="review-category">{category}</div>
+      <Link to={"/category/" + category} className="review-category">
+        {category}
+      </Link>
       <p className="review-body">{review_body}</p>
     </article>
   );

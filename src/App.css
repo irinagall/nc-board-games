@@ -91,6 +91,13 @@ main {
   max-width: 100%;
 }
 
+.review-card .review-body::after {
+  display: block;
+  clear: both;
+  content: "";
+  height: 0;
+}
+
 @media screen and (min-width: 800px) {
   .review-card .review-image {
     max-width: 35%;

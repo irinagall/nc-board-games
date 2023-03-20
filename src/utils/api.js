@@ -47,3 +47,12 @@ export const postNewComment = (review_id, newComment) => {
       return response.data;
     });
 };
+
+export const getReviewsForCategory = (categoryName) => {
+  const encodedCategoryName = encodeURIComponent(categoryName);
+  return boardGamesRequestMaker
+    .get(`/reviews?category=${encodedCategoryName}`)
+    .then(({ data }) => {
+      return data;
+    });
+};
