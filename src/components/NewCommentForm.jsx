@@ -14,7 +14,7 @@ const NewCommentForm = () => {
   }, [newCommentText]);
 
   const onClickCommentSubmit = () => {
-    isPostingInProgress(true);
+    setIsPostingInProgress(true);
     setIsPostingError(false);
     postNewComment(review_id, {
       username: "anonymous",
@@ -24,8 +24,8 @@ const NewCommentForm = () => {
         setIsPostingInProgress(false);
       })
       .catch(() => {
-        setIsPostingError(true);
         setIsPostingInProgress(false);
+        setIsPostingError(true);
       });
   };
 

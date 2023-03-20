@@ -8,8 +8,10 @@ const IndividualReviewVotes = () => {
   const [votes, setVotes] = useState(null);
   const [isVotingInProgress, setIsVotingInProgress] = useState(false);
   const [isVotingError, setIsVotingError] = useState(false);
-  let votesPriorToVoting = -1;
+
   const { review_id } = useParams([]);
+  
+  let votesPriorToVoting = -1;
   const cookies = new Cookies();
   const reviewsVotedOnCookieKey = "reviewsVotedOn";
   const reviewsVotedOn = cookies.get(reviewsVotedOnCookieKey) || [];
@@ -29,7 +31,7 @@ const IndividualReviewVotes = () => {
     setVotes(votes + voteChange);
     if (isDownvote) {
       const newReviewsVotedOn = reviewsVotedOn.filter((item) => {
-        return item != review_id;
+        return item !== review_id;
       });
       cookies.set(reviewsVotedOnCookieKey, newReviewsVotedOn);
     } else {
