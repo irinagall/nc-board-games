@@ -39,3 +39,12 @@ export const voteForReview = (review_id, changeVal) => {
       return data.review.votes;
     });
 };
+
+export const getReviewsForCategory = (categoryName) => {
+  const encodedCategoryName = encodeURIComponent(categoryName);
+  return boardGamesRequestMaker
+    .get(`/reviews?category=${encodedCategoryName}`)
+    .then(({ data }) => {
+      return data;
+    });
+};
