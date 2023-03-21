@@ -43,7 +43,6 @@ export const postNewComment = (review_id, newComment) => {
   return boardGamesRequestMaker
     .post(`/reviews/${review_id}/comments`, newComment)
     .then((response) => {
-      console.log(response);
       return response.data;
     });
 };
@@ -52,6 +51,15 @@ export const getReviewsForCategory = (categoryName) => {
   const encodedCategoryName = encodeURIComponent(categoryName);
   return boardGamesRequestMaker
     .get(`/reviews?category=${encodedCategoryName}`)
+    .then(({ data }) => {
+      return data;
+    });
+};
+
+export const getOrderedReviews = (fieldToSortBy, isAscending) => {
+  const order = isAscending ? "ASC" : "DESC";
+  return boardGamesRequestMaker
+    .get(`/reviews?sort_by=${fieldToSortBy}&order=${order}`)
     .then(({ data }) => {
       return data;
     });
