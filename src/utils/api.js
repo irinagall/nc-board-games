@@ -64,3 +64,19 @@ export const getOrderedReviews = (fieldToSortBy, isAscending) => {
       return data;
     });
 };
+
+export const getOrderedReviewsByCategory = (
+  fieldToSortBy,
+  isAscending,
+  category
+) => {
+  const order = isAscending ? "ASC" : "DESC";
+  const shouldFilterByCategory = category === undefined;
+  let endpointPath = `/reviews?sort_by=${fieldToSortBy}&order=${order}`;
+  if (shouldFilterByCategory) {
+    endpointPath += `&category=${category}`;
+  }
+  return boardGamesRequestMaker.get(endpointPath).then(({ data }) => {
+    return data;
+  });
+};
