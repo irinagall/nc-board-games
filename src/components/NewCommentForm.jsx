@@ -9,9 +9,7 @@ const NewCommentForm = () => {
 
   const { review_id } = useParams([]);
 
-  useEffect(() => {
-    console.log(newCommentText);
-  }, [newCommentText]);
+  useEffect(() => {}, [newCommentText]);
 
   const onClickCommentSubmit = () => {
     setIsPostingInProgress(true);
